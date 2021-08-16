@@ -1,6 +1,15 @@
 module.exports = {
-  // Propriedades CSS não utilizadas serão excluídas da build nas seguintes pastas que vamos utilizar tailWind:
-  purge: ['./src/pages/**/*.{js,ts,jsx,tsx}', './src/components/**/*.{js,ts,jsx,tsx}'],
+  purge: {
+    content: [
+      './src/pages/**/*.{js,ts,jsx,tsx}',
+      './src/components/**/*.{js,ts,jsx,tsx}'
+    ],
+    safelist: [
+      /^bg-/,
+      /^to-/,
+      /^from-/,
+    ]
+  },
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {},
