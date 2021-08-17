@@ -1,4 +1,4 @@
-# Template Admin
+# Next CRUD
 
 Projeto Front-End feito em React - NextJS utilizando Typescript, TailWindCSS e Firebase na parte de autenticação de usuário.
 
