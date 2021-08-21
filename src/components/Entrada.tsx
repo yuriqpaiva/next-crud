@@ -5,6 +5,7 @@ interface EntradaProps {
     somenteLeitura?: boolean
     className?: string
     valorMudou?: (valor: any) => void
+    placeholder?: string
 }
 
 export default function Entrada(props: EntradaProps) {
@@ -20,6 +21,7 @@ export default function Entrada(props: EntradaProps) {
                     focus:outline-none bg-gray-50
                     px-4 py-2 ${props.somenteLeitura ? '' : 'focus:bg-white'}
                 `}
+                placeholder={props.placeholder}
                 onChange={(e) => props.valorMudou?.(e.target.value)}
             />
         </div>

@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Cliente from '../core/Cliente'
 import Botao from './Botao'
 import Entrada from './Entrada'
@@ -15,6 +15,8 @@ export default function Formulario(props: FormularioProps) {
     const [nome, setNome] = useState(props.cliente?.nome ?? '')
     const [idade, setIdade] = useState(props.cliente?.idade ?? '')
 
+    useEffect(() => setIdade(''), [])
+
     return (
         <div>
             {id ? (
@@ -30,12 +32,14 @@ export default function Formulario(props: FormularioProps) {
                 valor={nome}
                 valorMudou={setNome}
                 className="mb-5"
+                placeholder='Digite o nome do cadastro'
             />
             <Entrada
                 texto='Idade'
                 tipo='number'
                 valor={idade}
                 valorMudou={setIdade}
+                placeholder='Insira a idade do cadastro'
             />
             <div className="flex justify-end mt-7">
                 <Botao cor="blue" className="mr-2" 
